@@ -1,0 +1,1 @@
+wget http://www.sound-effect.com/pirsounds/WEB_DESIGN_SOUNDS_WAV1/BUTTONS/CLICK8A.WAV -O sounds/click.wav
