@@ -16,12 +16,15 @@ import time
 def main():
     disp = Display()  # connect to display
     last_keymap = [0] * 32
+    sound_filename = os.path.join(
+            os.path.dirname(os.path.realpath(__file__)),
+            'sounds/click.wav')
 
     while 1:  # event loop
         keymap = disp.query_keymap()
         time.sleep(0.02)
         if any(keymap[i] & ~last_keymap[i] for i in xrange(32)):
-            os.system('aplay sounds/click.wav &')
+            os.system('aplay "%s" &' % sound_filename)
         last_keymap = keymap
 
 
